@@ -52,14 +52,15 @@ const PieChartComponent = ({
   colors = DEFAULT_COLORS,
   innerRadius = 60,
 }: PieChartProps) => {
-  const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
+  // Fix: Default to 0 or use a specific number type to satisfy Recharts TS definitions
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
 
   const onPieEnter = (_: any, index: number) => {
     setActiveIndex(index);
   };
 
   const onPieLeave = () => {
-    setActiveIndex(undefined);
+    setActiveIndex(-1);
   };
 
   return (
@@ -88,7 +89,6 @@ const PieChartComponent = ({
               className='cursor-pointer'
             >
               {data.map((entry, index) => {
-                // Use the slate reference color if the item is labeled "Others"
                 const isOther = entry.name === "Others";
                 const fillColor = isOther
                   ? "#94a3b8"
