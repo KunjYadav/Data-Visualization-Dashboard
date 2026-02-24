@@ -52,7 +52,6 @@ const PieChartComponent = ({
   colors = DEFAULT_COLORS,
   innerRadius = 60,
 }: PieChartProps) => {
-  // Fix: Default to 0 or use a specific number type to satisfy Recharts TS definitions
   const [activeIndex, setActiveIndex] = useState<number>(-1);
 
   const onPieEnter = (_: any, index: number) => {
@@ -62,6 +61,9 @@ const PieChartComponent = ({
   const onPieLeave = () => {
     setActiveIndex(-1);
   };
+
+  // We cast Pie to any here to fix the "activeIndex property does not exist" type error
+  const ComponentPie = Pie as any;
 
   return (
     <div className='bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm w-full h-full min-h-100 transition-colors duration-300'>
@@ -73,7 +75,7 @@ const PieChartComponent = ({
       <div className='h-80 w-full'>
         <ResponsiveContainer width='100%' height='100%'>
           <PieChart>
-            <Pie
+            <ComponentPie
               activeIndex={activeIndex}
               activeShape={renderActiveShape}
               data={data}
@@ -102,7 +104,7 @@ const PieChartComponent = ({
                   />
                 );
               })}
-            </Pie>
+            </ComponentPie>
             <Tooltip
               contentStyle={{
                 backgroundColor: "var(--background)",
