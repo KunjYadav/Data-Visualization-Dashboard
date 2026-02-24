@@ -190,7 +190,7 @@ const ScatterChartComponent = ({
                     fill={COLORS[index % COLORS.length]}
                     fillOpacity={0.6}
                     stroke={COLORS[index % COLORS.length]}
-                    strokeWidth={2}
+                    strokeWidth={1}
                   />
                 ))}
               </Scatter>
