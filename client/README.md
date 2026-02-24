@@ -59,20 +59,33 @@ npm run dev
 
 Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) to view the application.
 
-## 📂 Project Structure
+## 📂 PROJECT ARCHITECTURE
 
-_`app/`: Next.js App Router pages and layouts.
-_`dashboard/`: Main visualization hub. \*`explorer/`: Detailed record searching and exporting.
+```text
+client/
+├── app/                # Next.js App Router (Dashboard & Explorer)
+├── components/         # Atomic UI & Specialized Chart Wrappers
+├── context/            # Global Data State & Filtering Logic
+├── public/             # Static Assets & Icons
+└── tailwind.config.ts  # Theme & Design System
+```
 
-_`components/`: Reusable UI components and specific Chart wrappers.
-_`context/`: `DashboardContext` for global state management of data and filters. \*`public/`: Static assets and icons.
+## 📊 DATA INTELLIGENCE LOGIC
 
-## 📊 Data Logic
+The application performs client-side data enrichment:
 
-The client includes enrichment logic found in `context/DashboardContext.tsx`:
+> SWOT ANALYSIS:
+> Classified using (Intensity \* Likelihood) matrix.
+>
+> - Strength: Likelihood >= 3 & Intensity >= 12
+> - Opportunity: Likelihood >= 3 & Intensity < 12
+> - Threat: Likelihood < 3 & Intensity >= 12
+> - Weakness: Likelihood < 3 & Intensity < 12
+>
+> CITY PROXYING:
+> Maps Country/Region strings to major Global Hubs for better geographical grouping in charts.
 
-**\*SWOT Classification**: Items are categorized based on `intensity` and `likelihood`. High likelihood and intensity are marked as "Strengths," while low likelihood and high intensity are marked as "Threats."
-**\*City Proxying**: Since the raw data lacks specific city fields, a proxy mapper assigns global hubs (e.g., "Shanghai / Beijing" for China) based on the `country` and `region` fields to enable geographical visualization.
+---
 
 ## 📜 Deployment
 

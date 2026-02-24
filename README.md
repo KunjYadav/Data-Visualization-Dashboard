@@ -35,7 +35,8 @@ Make sure you have [Node.js / Python 3.x] installed on your machine.
 1. **Clone the repository:**
 
    ```bash
-   git clone [https://github.com/your-username/Data-Visualization-Dashboard.git](https://github.com/your-username/Data-Visualization-Dashboard.git)
+   git clone https://github.com/KunjYadav/Data-Visualization-Dashboard.git
+
    ```
 
 2. **Navigate to the directory:**
