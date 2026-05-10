@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="db-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="chart-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2dd4bf" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Edge-to-edge Squircle Background (Maximizes footprint for favicons) -->
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- Simplified, Chunky Dashboard (Top Right) -->
+  <rect x="240" y="80" width="210" height="170" rx="24" fill="#0f172a" stroke="#38bdf8" stroke-width="16"/>
+  <!-- Two thick bar charts for maximum readability -->
+  <rect x="290" y="160" width="36" height="60" rx="10" fill="#38bdf8"/>
+  <rect x="370" y="110" width="36" height="110" rx="10" fill="#818cf8"/>
+
+  <!-- Simplified, Chunky Database (Bottom Left) -->
+  <!-- Bottom Tier -->
+  <path d="M70,370 v50 c0,25 90,25 180,0 v-50 z" fill="#312e81"/>
+  <!-- Top Tier -->
+  <path d="M70,310 v60 c0,25 90,25 180,0 v-60 z" fill="#3730a3"/>
+  <!-- Top Face -->
+  <ellipse cx="160" cy="310" rx="90" ry="45" fill="url(#db-grad)"/>
+
+  <!-- Ultra-Thick Trendline Overlay -->
+  <path d="M100,420 L230,320 L310,350 L420,190" fill="none" stroke="url(#chart-grad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Massive Insight/Data Node at the end -->
+  <circle cx="420" cy="190" r="28" fill="#ffffff" stroke="#818cf8" stroke-width="12"/>
+</svg>
